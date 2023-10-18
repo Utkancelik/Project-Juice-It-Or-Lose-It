@@ -123,6 +123,228 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14683309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14683311}
+  - component: {fileID: 14683310}
+  - component: {fileID: 14683312}
+  m_Layer: 0
+  m_Name: Wall_Left
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &14683310
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14683309}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &14683311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14683309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91165505}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &14683312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14683309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &54668299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54668300}
+  - component: {fileID: 54668302}
+  - component: {fileID: 54668301}
+  m_Layer: 0
+  m_Name: Wall_Up
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54668300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54668299}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: -9.0148, y: 5.1, z: 0}
+  m_LocalScale: {x: 1, y: 17.029999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91165505}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!61 &54668301
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54668299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &54668302
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54668299}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &62126966
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +357,7 @@ GameObject:
   - component: {fileID: 62126967}
   - component: {fileID: 62126969}
   m_Layer: 0
-  m_Name: Block (16)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +439,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 62126966}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -246,7 +468,7 @@ GameObject:
   - component: {fileID: 75311530}
   - component: {fileID: 75311532}
   m_Layer: 0
-  m_Name: Block (4)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +550,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 75311529}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -357,7 +579,7 @@ GameObject:
   - component: {fileID: 78779255}
   - component: {fileID: 78779257}
   m_Layer: 0
-  m_Name: Block (39)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +661,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 78779254}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -468,7 +690,7 @@ GameObject:
   - component: {fileID: 86582362}
   - component: {fileID: 86582364}
   m_Layer: 0
-  m_Name: Block (6)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +772,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 86582361}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -579,7 +801,7 @@ GameObject:
   - component: {fileID: 89941576}
   - component: {fileID: 89941578}
   m_Layer: 0
-  m_Name: Block (30)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,7 +883,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 89941575}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -678,6 +900,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &91165504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91165505}
+  m_Layer: 0
+  m_Name: Walls
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91165505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91165504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 14683311}
+  - {fileID: 1773728764}
+  - {fileID: 54668300}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268830739
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +946,7 @@ GameObject:
   - component: {fileID: 268830740}
   - component: {fileID: 268830742}
   m_Layer: 0
-  m_Name: Block (15)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,7 +1028,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 268830739}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -801,7 +1057,7 @@ GameObject:
   - component: {fileID: 277141519}
   - component: {fileID: 277141521}
   m_Layer: 0
-  m_Name: Block (38)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +1139,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 277141518}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -912,7 +1168,7 @@ GameObject:
   - component: {fileID: 295270950}
   - component: {fileID: 295270952}
   m_Layer: 0
-  m_Name: Block (34)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -994,7 +1250,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 295270949}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1021,8 +1277,8 @@ GameObject:
   m_Component:
   - component: {fileID: 454284422}
   - component: {fileID: 454284421}
-  - component: {fileID: 454284423}
   - component: {fileID: 454284424}
+  - component: {fileID: 454284423}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Paddle
@@ -1110,6 +1366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  mobileMoveSpeed: 5
+  mobileInputEnabled: 1
 --- !u!61 &454284424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1119,7 +1377,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 454284420}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1148,7 +1406,7 @@ GameObject:
   - component: {fileID: 460369060}
   - component: {fileID: 460369062}
   m_Layer: 0
-  m_Name: Block (28)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1230,7 +1488,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 460369059}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1259,7 +1517,7 @@ GameObject:
   - component: {fileID: 500523651}
   - component: {fileID: 500523653}
   m_Layer: 0
-  m_Name: Block (37)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1599,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 500523650}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1370,7 +1628,7 @@ GameObject:
   - component: {fileID: 511558003}
   - component: {fileID: 511558005}
   m_Layer: 0
-  m_Name: Block (20)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,7 +1710,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 511558002}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1599,7 +1857,7 @@ GameObject:
   - component: {fileID: 536536261}
   - component: {fileID: 536536263}
   m_Layer: 0
-  m_Name: Block (10)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,7 +1939,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 536536260}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1710,7 +1968,7 @@ GameObject:
   - component: {fileID: 550207118}
   - component: {fileID: 550207120}
   m_Layer: 0
-  m_Name: Block (3)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1792,7 +2050,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 550207117}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1821,7 +2079,7 @@ GameObject:
   - component: {fileID: 585077176}
   - component: {fileID: 585077178}
   m_Layer: 0
-  m_Name: Block (8)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,7 +2161,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 585077175}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1932,7 +2190,7 @@ GameObject:
   - component: {fileID: 617441741}
   - component: {fileID: 617441743}
   m_Layer: 0
-  m_Name: Block (32)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,7 +2272,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 617441740}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2123,7 +2381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658249016}
   m_Layer: 0
-  m_Name: Blocks
+  m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2200,7 +2458,7 @@ GameObject:
   - component: {fileID: 661361263}
   - component: {fileID: 661361265}
   m_Layer: 0
-  m_Name: Block (35)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2282,7 +2540,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 661361262}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2311,7 +2569,7 @@ GameObject:
   - component: {fileID: 661576679}
   - component: {fileID: 661576681}
   m_Layer: 0
-  m_Name: Block (33)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2393,7 +2651,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 661576678}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2422,7 +2680,7 @@ GameObject:
   - component: {fileID: 676317440}
   - component: {fileID: 676317442}
   m_Layer: 0
-  m_Name: Block (14)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2504,7 +2762,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 676317439}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2533,7 +2791,7 @@ GameObject:
   - component: {fileID: 784109684}
   - component: {fileID: 784109686}
   m_Layer: 0
-  m_Name: Block (23)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2615,7 +2873,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 784109683}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2644,7 +2902,7 @@ GameObject:
   - component: {fileID: 869666498}
   - component: {fileID: 869666500}
   m_Layer: 0
-  m_Name: Block (36)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2726,7 +2984,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 869666497}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2755,7 +3013,7 @@ GameObject:
   - component: {fileID: 934043836}
   - component: {fileID: 934043838}
   m_Layer: 0
-  m_Name: Block (27)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2837,7 +3095,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 934043835}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2866,7 +3124,7 @@ GameObject:
   - component: {fileID: 1021754201}
   - component: {fileID: 1021754203}
   m_Layer: 0
-  m_Name: Block (1)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2948,7 +3206,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1021754200}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2977,7 +3235,7 @@ GameObject:
   - component: {fileID: 1110399952}
   - component: {fileID: 1110399954}
   m_Layer: 0
-  m_Name: Block (18)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3059,7 +3317,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1110399951}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3088,7 +3346,7 @@ GameObject:
   - component: {fileID: 1235535168}
   - component: {fileID: 1235535170}
   m_Layer: 0
-  m_Name: Block (11)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3170,7 +3428,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1235535167}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3199,7 +3457,7 @@ GameObject:
   - component: {fileID: 1304245743}
   - component: {fileID: 1304245745}
   m_Layer: 0
-  m_Name: Block (7)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3281,7 +3539,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1304245742}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3310,7 +3568,7 @@ GameObject:
   - component: {fileID: 1369724504}
   - component: {fileID: 1369724506}
   m_Layer: 0
-  m_Name: Block (26)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3392,7 +3650,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1369724503}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3421,7 +3679,7 @@ GameObject:
   - component: {fileID: 1409869255}
   - component: {fileID: 1409869257}
   m_Layer: 0
-  m_Name: Block (19)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3503,7 +3761,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1409869254}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3532,7 +3790,7 @@ GameObject:
   - component: {fileID: 1413229794}
   - component: {fileID: 1413229796}
   m_Layer: 0
-  m_Name: Block (29)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3614,7 +3872,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1413229793}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3643,7 +3901,7 @@ GameObject:
   - component: {fileID: 1517377914}
   - component: {fileID: 1517377916}
   m_Layer: 0
-  m_Name: Block (5)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3725,7 +3983,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1517377913}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3754,7 +4012,7 @@ GameObject:
   - component: {fileID: 1527808768}
   - component: {fileID: 1527808770}
   m_Layer: 0
-  m_Name: Block (9)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3836,7 +4094,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1527808767}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3864,9 +4122,8 @@ GameObject:
   - component: {fileID: 1551516809}
   - component: {fileID: 1551516808}
   - component: {fileID: 1551516811}
-  - component: {fileID: 1551516810}
-  - component: {fileID: 1551516812}
   - component: {fileID: 1551516813}
+  - component: {fileID: 1551516810}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -3954,7 +4211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 5
-  initialDirection: {x: 0, y: 1}
+  initialDirection: {x: 0.5, y: 1}
 --- !u!50 &1551516811
 Rigidbody2D:
   serializedVersion: 4
@@ -3970,24 +4227,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1551516812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551516807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819fd184fb2269c43ac5edfff50b73f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &1551516813
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4016,7 +4261,7 @@ GameObject:
   - component: {fileID: 1574534430}
   - component: {fileID: 1574534432}
   m_Layer: 0
-  m_Name: Block (22)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4098,7 +4343,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1574534429}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4127,7 +4372,7 @@ GameObject:
   - component: {fileID: 1598973914}
   - component: {fileID: 1598973916}
   m_Layer: 0
-  m_Name: Block (31)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4209,7 +4454,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1598973913}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4238,7 +4483,7 @@ GameObject:
   - component: {fileID: 1676768325}
   - component: {fileID: 1676768327}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4320,7 +4565,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1676768324}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4349,7 +4594,7 @@ GameObject:
   - component: {fileID: 1682580391}
   - component: {fileID: 1682580393}
   m_Layer: 0
-  m_Name: Block (25)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4431,7 +4676,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1682580390}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4460,7 +4705,7 @@ GameObject:
   - component: {fileID: 1714311560}
   - component: {fileID: 1714311562}
   m_Layer: 0
-  m_Name: Block (42)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4542,7 +4787,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1714311559}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4571,7 +4816,7 @@ GameObject:
   - component: {fileID: 1719768119}
   - component: {fileID: 1719768121}
   m_Layer: 0
-  m_Name: Block (43)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4653,7 +4898,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1719768118}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4682,7 +4927,7 @@ GameObject:
   - component: {fileID: 1748705812}
   - component: {fileID: 1748705814}
   m_Layer: 0
-  m_Name: Block (21)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4764,7 +5009,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1748705811}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4793,7 +5038,7 @@ GameObject:
   - component: {fileID: 1765940885}
   - component: {fileID: 1765940887}
   m_Layer: 0
-  m_Name: Block (12)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4875,7 +5120,118 @@ BoxCollider2D:
   m_GameObject: {fileID: 1765940884}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &1773728762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773728764}
+  - component: {fileID: 1773728763}
+  - component: {fileID: 1773728765}
+  m_Layer: 0
+  m_Name: Wall_Right
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1773728763
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773728762}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1773728764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773728762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 91165505}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1773728765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773728762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4904,7 +5260,7 @@ GameObject:
   - component: {fileID: 1821150498}
   - component: {fileID: 1821150500}
   m_Layer: 0
-  m_Name: Block (2)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4986,7 +5342,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1821150497}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5015,7 +5371,7 @@ GameObject:
   - component: {fileID: 1853360812}
   - component: {fileID: 1853360814}
   m_Layer: 0
-  m_Name: Block (40)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5097,7 +5453,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1853360811}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5126,7 +5482,7 @@ GameObject:
   - component: {fileID: 1895806057}
   - component: {fileID: 1895806059}
   m_Layer: 0
-  m_Name: Block (41)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5208,7 +5564,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1895806056}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5237,7 +5593,7 @@ GameObject:
   - component: {fileID: 1941295652}
   - component: {fileID: 1941295654}
   m_Layer: 0
-  m_Name: Block (17)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5319,7 +5675,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1941295651}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5348,7 +5704,7 @@ GameObject:
   - component: {fileID: 1974870816}
   - component: {fileID: 1974870818}
   m_Layer: 0
-  m_Name: Block (13)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5430,7 +5786,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1974870815}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5459,7 +5815,7 @@ GameObject:
   - component: {fileID: 2051120697}
   - component: {fileID: 2051120699}
   m_Layer: 0
-  m_Name: Block (24)
+  m_Name: Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5541,7 +5897,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2051120696}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
