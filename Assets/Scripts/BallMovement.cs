@@ -11,6 +11,9 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+
+    public Vector3 startPosition;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,27 +22,42 @@ public class BallMovement : MonoBehaviour
 
         gameManager = FindObjectOfType<GameManager>();
     }
+
     private void Update()
     {
         if (transform.position.y < someYThreshold)
         {
             // The ball has fallen below the paddle and off the screen.
-            // Call RemoveLife to handle life removal.
-            gameManager.RemoveLife();
+            // Check if the game is not already over.
+            if (!gameManager.isGameOver)
+            {
+                gameManager.RemoveLife(); // Remove only 1 life.
 
-            if (gameManager.isGameOver)
-            {
-                // Game over logic here, such as pausing the game or displaying a game over screen.
-            }
-            else
-            {
-                // Reset the ball's position and other relevant game state.
-                // You may also reset the paddle's position here.
+                if (gameManager.isGameOver)
+                {
+                    // Game over logic here, such as pausing the game or displaying a game over screen.
+                }
+                else
+                {
+                    // Reset the ball's position and other relevant game state.
+                    ResetBallPosition(); // Call the reset method.
+                }
             }
         }
-
-
     }
+
+    private void ResetBallPosition()
+    {
+        // Reset the ball's position and other relevant game state.
+        // You may also reset the paddle's position here.
+        transform.position = startPosition; // Set startPosition to the initial ball position.
+        rb.velocity = initialDirection.normalized * initialSpeed;
+
+        // Reset the flag to allow life decrements again.
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Paddle"))
@@ -74,4 +92,5 @@ public class BallMovement : MonoBehaviour
             rb.velocity = rb.velocity.normalized * initialSpeed;
         }
     }
+
 }

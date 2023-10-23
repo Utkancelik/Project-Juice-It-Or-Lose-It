@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Text scoreText; // Reference to the UI text displaying the score
     public Text livesText; // Reference to the UI text displaying the lives
-    public int initialLives = 1; // Set the initial number of lives to 1 for a classic Arkanoid experience.
+    public int initialLives = 3; // Set the initial number of lives to 1 for a classic Arkanoid experience.
     public int pointsPerBrick = 10; // Set the number of points awarded for each brick.
 
     private int score = 0;
@@ -91,4 +92,20 @@ public class GameManager : MonoBehaviour
             uiManager.ShowGameOverScreen(highScore, currentRound);
         }
     }
+
+    public void RestartGame()
+    {
+        // Reset the game state.
+        isGameOver = false;
+        Time.timeScale = 1; // Unpause the game.
+
+        // Reset other game-related parameters, such as lives, score, etc.
+        lives = initialLives;
+        score = 0;
+
+        // Implement logic to respawn the ball and paddle.
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }
