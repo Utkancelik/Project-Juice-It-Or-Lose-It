@@ -1291,11 +1291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03209711f0d94d74b82642645adfb99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   mobileMoveSpeed: 5
-  mobileInputEnabled: 1
-  leftButton: {fileID: 2025407030}
-  rightButton: {fileID: 1423658631}
+  mobileInputEnabled: 0
+  leftButton: {fileID: 2025407028}
+  rightButton: {fileID: 1423658629}
 --- !u!61 &454284424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3972,7 +3972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -430, y: 52.08}
+  m_AnchoredPosition: {x: -430, y: 52.079956}
   m_SizeDelta: {x: 182.1001, y: 106.6}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1423658631
@@ -4698,7 +4698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   pointsForBrickCollision: 10
-  initialSpeed: 5
+  initialSpeed: 10
   someYThreshold: -5.2
   initialDirection: {x: 0, y: 1}
   startPosition: {x: 0, y: -2.87, z: 0}
@@ -6188,7 +6188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 52.2, y: 39.2}
+  m_AnchoredPosition: {x: 52.19995, y: 39.19995}
   m_SizeDelta: {x: 182.1, y: 106.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2025407030

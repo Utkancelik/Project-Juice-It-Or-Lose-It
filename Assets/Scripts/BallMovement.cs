@@ -71,8 +71,8 @@ public class BallMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Collided with: " + collision.gameObject.tag);
-            Debug.Log("Collision normal: " + collision.contacts[0].normal);
+            //Debug.Log("Collided with: " + collision.gameObject.tag);
+            //Debug.Log("Collision normal: " + collision.contacts[0].normal);
 
             rb.velocity = rb.velocity.normalized * initialSpeed;
         }
