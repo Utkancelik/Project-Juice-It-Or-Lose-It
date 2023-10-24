@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PaddleMovement : MonoBehaviour
@@ -8,16 +9,36 @@ public class PaddleMovement : MonoBehaviour
     public GameObject leftButton; // Reference to the left movement button.
     public GameObject rightButton; // Reference to the right movement button.
 
+    public Vector2 maxScale = new Vector2(1.2f, 1.2f); // Maximum scale when hit (x and y).
+    public float scaleUpDuration = 0.1f; // Speed for scaling up.
+    public float scaleDownDuration = 0.3f; // Speed for scaling down.
+
+    public float shakeDuration = 0.2f; // Duration of the shake.
+    public float shakeMagnitude = 0.1f; // Magnitude of the shake.
+
+    private Vector2 originalScale; // Store the original scale.
+    private Vector2 currentScale; // Store the current scale.
+
     private float paddleWidth;
     private float screenBoundsX;
 
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
+    private bool isShaking = false;
+
+    private Vector3 originalPosition; // Store the original position for shaking.
 
     private void Start()
     {
         paddleWidth = transform.localScale.x; // Get the paddle's width.
         screenBoundsX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
+
+        // Store the original scale.
+        originalScale = new Vector2(transform.localScale.x, transform.localScale.y);
+        currentScale = originalScale;
+
+        // Store the original position for shaking.
+        originalPosition = transform.position;
 
         // Add button click listeners
         leftButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(MoveLeft);
@@ -52,6 +73,7 @@ public class PaddleMovement : MonoBehaviour
     {
         Vector3 newPosition = transform.position + Vector3.right * direction * moveSpeed * Time.deltaTime;
         newPosition.x = Mathf.Clamp(newPosition.x, -screenBoundsX + paddleWidth / 2 + 0.5f, screenBoundsX - paddleWidth / 2 - 0.5f);
+
         transform.position = newPosition;
     }
 
@@ -72,4 +94,40 @@ public class PaddleMovement : MonoBehaviour
         isMovingLeft = false;
         isMovingRight = false;
     }
+
+    public void ScalePaddleOnHit()
+    {
+        StartCoroutine(ScaleAndShakePaddle());
+    }
+
+    private IEnumerator ScaleAndShakePaddle()
+    {
+        Vector2 initialScale = currentScale;
+        Vector3 originalPos = transform.position;
+        float startTime = Time.time;
+
+        while (Time.time - startTime < shakeDuration)
+        {
+            float t = (Time.time - startTime) / shakeDuration;
+
+            // Calculate the scale using Lerp to smoothly transition from initialScale to maxScale.
+            float scalex = Mathf.Lerp(initialScale.x, maxScale.x, t);
+            float scaley = Mathf.Lerp(initialScale.y, maxScale.y, t);
+            currentScale = new Vector2(scalex, scaley);
+            transform.localScale = new Vector3(scalex, scaley, transform.localScale.z);
+
+            // Calculate the vertical shake position using Sin function.
+            float yOffset = Mathf.Sin((Time.time - startTime) * Mathf.PI * 20.0f) * shakeMagnitude;
+            Vector3 newPosition = originalPos + new Vector3(0, yOffset, 0);
+            transform.position = newPosition;
+
+            yield return null;
+        }
+
+        // Reset the paddle to its original state when the shaking is done.
+        transform.position = originalPos;
+        currentScale = initialScale;
+        transform.localScale = new Vector3(initialScale.x, initialScale.y, transform.localScale.z);
+    }
+
 }

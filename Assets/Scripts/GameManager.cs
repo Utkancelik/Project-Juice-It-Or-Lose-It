@@ -4,21 +4,35 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text scoreText; // Reference to the UI text displaying the score
-    public Text livesText; // Reference to the UI text displaying the lives
-    public int initialLives = 3; // Set the initial number of lives to 1 for a classic Arkanoid experience.
-    public int pointsPerBrick = 10; // Set the number of points awarded for each brick.
+    public Text scoreText;
+    public Text livesText;
+    public int initialLives = 3;
+    public int pointsPerBrick = 10;
+
+    public static GameManager Instance { get; private set; }
 
     private int score = 0;
     private int lives;
     public bool isGameOver = false;
+    public bool isGameWon = false;
+    public UIManager uiManager;
 
-    public UIManager uiManager; // Reference to the UIManager script for game over UI.
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
         lives = initialLives;
-        LoadHighScore(); // Load the high score when the game starts.
+        LoadHighScore();
         UpdateScoreText();
         UpdateLivesText();
     }
@@ -42,8 +56,8 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         UpdateScoreText();
-        // Call SaveHighScore when the player achieves a new high score.
         SaveHighScore();
+        CheckGameWon();
     }
 
     public void RemoveLife()
@@ -75,37 +89,57 @@ public class GameManager : MonoBehaviour
     {
         if (livesText != null)
         {
-            livesText.text = "1 UP " + lives; // Display "1 UP" and the remaining lives.
+            livesText.text = "1 UP " + lives;
         }
+    }
+
+    public void CheckGameWon()
+    {
+        GameObject[] remainingBricks = GameObject.FindGameObjectsWithTag("Brick");
+        Debug.Log($"Check Game Won! Remaining Bricks: {remainingBricks.Length}");
+
+        if (remainingBricks.Length -1 == 0)
+        {
+            Debug.Log("Game Won! 0 Bricks");
+            isGameWon = true;
+            ShowGameWonScreen();
+        }
+    }
+
+    private void ShowGameWonScreen()
+    {
+        if (uiManager != null)
+        {
+            uiManager.ShowGameWonScreen();
+        }
+    }
+
+
+    public void RestartGame()
+    {
+        isGameOver = false;
+        isGameWon = false;
+        Time.timeScale = 1;
+        lives = initialLives;
+        score = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void RestartGameAfterWin()
+    {
+        RestartGame();
     }
 
     public void GameOver()
     {
-        Debug.Log("Game Over is Running!");
         isGameOver = true;
-        Time.timeScale = 0; // Pause the game.
+        Time.timeScale = 0;
 
         if (uiManager != null)
         {
-            int highScore = PlayerPrefs.GetInt("HighScore", 0); // Retrieve the high score.
-            int currentRound = 1; // Calculate the current round.
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+            int currentRound = 1;
             uiManager.ShowGameOverScreen(highScore, currentRound);
         }
     }
-
-    public void RestartGame()
-    {
-        // Reset the game state.
-        isGameOver = false;
-        Time.timeScale = 1; // Unpause the game.
-
-        // Reset other game-related parameters, such as lives, score, etc.
-        lives = initialLives;
-        score = 0;
-
-        // Implement logic to respawn the ball and paddle.
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
 }

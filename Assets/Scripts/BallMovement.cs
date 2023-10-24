@@ -5,22 +5,20 @@ public class BallMovement : MonoBehaviour
 {
     public GameManager gameManager;
     public int pointsForBrickCollision = 10;
-    public float initialSpeed = 5f; // Adjust the initial speed as needed
+    public float initialSpeed = 5f;
     public float someYThreshold;
-    public Vector2 initialDirection = Vector2.up; // Adjust the initial direction as needed
+    public Vector2 initialDirection = Vector2.up;
+    public Vector3 startPosition;
 
     private Rigidbody2D rb;
 
-
-    public Vector3 startPosition;
-
+    private ScreenShake screenShake;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Set the initial velocity of the ball
         rb.velocity = initialDirection.normalized * initialSpeed;
-
         gameManager = FindObjectOfType<GameManager>();
+        screenShake = FindObjectOfType<ScreenShake>();
     }
 
     private void Update()
@@ -48,49 +46,32 @@ public class BallMovement : MonoBehaviour
 
     private void ResetBallPosition()
     {
-        // Reset the ball's position and other relevant game state.
-        // You may also reset the paddle's position here.
-        transform.position = startPosition; // Set startPosition to the initial ball position.
+        transform.position = startPosition;
         rb.velocity = initialDirection.normalized * initialSpeed;
-
-        // Reset the flag to allow life decrements again.
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Trigger the screen shake
+        
+
         if (collision.gameObject.CompareTag("Paddle"))
         {
-            // Adjust ball's velocity based on where it hits the paddle.
+            PaddleMovement paddleMovement = collision.gameObject.GetComponent<PaddleMovement>();
+            if (paddleMovement != null)
+                paddleMovement.ScalePaddleOnHit();
+            screenShake.Shake(0.025f);
             float hitOffset = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;
             Vector2 newDirection = new Vector2(hitOffset, 1).normalized;
-
-            // Apply the new direction to the ball with the same speed.
             rb.velocity = newDirection * initialSpeed;
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {
-            //Debug.Log("Collided with: " + collision.gameObject.tag);
-            //Debug.Log("Collision normal: " + collision.contacts[0].normal);
-
-            rb.velocity = rb.velocity.normalized * initialSpeed;
-        }
-        else if (collision.gameObject.CompareTag("Brick"))
-        {
-            // Handle brick collision here, e.g., destroy the brick and reflect the ball.
-            Destroy(collision.gameObject);
-
-            // Access the GameManager and add points to the score
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            if (gameManager != null)
-            {
-                gameManager.AddScore(pointsForBrickCollision);
-            }
-
-            // Normalize the direction after hitting the brick to maintain a consistent speed.
+            screenShake.Shake(0.1f);
             rb.velocity = rb.velocity.normalized * initialSpeed;
         }
     }
-
 }
+
+
+
