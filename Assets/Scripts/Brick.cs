@@ -32,6 +32,8 @@ public class Brick : MonoBehaviour
         }
     }
 
+   
+
     protected void DestroyBrick()
     {
         if (destroyEffect != null)

@@ -28,6 +28,8 @@ public class PaddleMovement : MonoBehaviour
 
     private Vector3 originalPosition; // Store the original position for shaking.
 
+    public GameObject wallLeft; // Reference to the left movement button.
+    public GameObject wallRight; // Reference to the right movement button.
     private void Start()
     {
         paddleWidth = transform.localScale.x; // Get the paddle's width.
@@ -71,11 +73,20 @@ public class PaddleMovement : MonoBehaviour
 
     private void MovePaddle(float direction)
     {
-        Vector3 newPosition = transform.position + Vector3.right * direction * moveSpeed * Time.deltaTime;
-        newPosition.x = Mathf.Clamp(newPosition.x, -screenBoundsX + paddleWidth / 2 + 0.5f, screenBoundsX - paddleWidth / 2 - 0.5f);
+        // Calculate the position of the walls based on the wall GameObjects.
+        float leftWallPosition = wallLeft.transform.position.x + wallLeft.GetComponent<Renderer>().bounds.size.x / 2;
+        float rightWallPosition = wallRight.transform.position.x - wallRight.GetComponent<Renderer>().bounds.size.x / 2;
 
+        // Calculate the new position for the paddle.
+        Vector3 newPosition = transform.position + Vector3.right * direction * moveSpeed * Time.deltaTime;
+
+        // Clamp the paddle position to stay within the wall boundaries.
+        newPosition.x = Mathf.Clamp(newPosition.x, leftWallPosition + paddleWidth / 2, rightWallPosition - paddleWidth / 2);
+
+        // Apply the new position to the paddle.
         transform.position = newPosition;
     }
+
 
     private void MoveLeft()
     {

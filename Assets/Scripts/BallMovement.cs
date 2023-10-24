@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BallMovement : MonoBehaviour
@@ -11,14 +13,23 @@ public class BallMovement : MonoBehaviour
     public Vector3 startPosition;
 
     private Rigidbody2D rb;
-
     private ScreenShake screenShake;
+
+    public TrailRenderer trailRenderer; // Reference to the TrailRenderer component
+
+    private Color originalStartColor;
+    private Color originalEndColor;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = initialDirection.normalized * initialSpeed;
         gameManager = FindObjectOfType<GameManager>();
         screenShake = FindObjectOfType<ScreenShake>();
+
+        // Store the original colors of the TrailRenderer
+        originalStartColor = trailRenderer.startColor;
+        originalEndColor = trailRenderer.endColor;
     }
 
     private void Update()
@@ -52,10 +63,19 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Trigger the screen shake
-        
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            // Trigger the screen shake
+            screenShake.Shake(0.05f);
 
-        if (collision.gameObject.CompareTag("Paddle"))
+            // Change the color of the TrailRenderer
+            trailRenderer.startColor = Color.white;
+            trailRenderer.endColor = Color.white;
+
+            // Start a coroutine to reset the colors with fading
+            StartCoroutine(ResetTrailColorsWithFading());
+        }
+        else if (collision.gameObject.CompareTag("Paddle"))
         {
             PaddleMovement paddleMovement = collision.gameObject.GetComponent<PaddleMovement>();
             if (paddleMovement != null)
@@ -67,11 +87,35 @@ public class BallMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {
+            // Trigger the screen shake and handle collision with the wall
             screenShake.Shake(0.1f);
             rb.velocity = rb.velocity.normalized * initialSpeed;
         }
     }
+
+    private IEnumerator ResetTrailColorsWithFading()
+    {
+        float elapsedTime = 0f;
+        float fadeDuration = 2f; // Adjust the fade duration as needed
+
+        Color currentStartColor = trailRenderer.startColor;
+        Color currentEndColor = trailRenderer.endColor;
+
+        while (elapsedTime < fadeDuration)
+        {
+            trailRenderer.startColor = Color.Lerp(currentStartColor, originalStartColor, elapsedTime / fadeDuration);
+            trailRenderer.endColor = Color.Lerp(currentEndColor, originalEndColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the colors are set to the original values
+        trailRenderer.startColor = originalStartColor;
+        trailRenderer.endColor = originalEndColor;
+    }
 }
+
+
 
 
 
