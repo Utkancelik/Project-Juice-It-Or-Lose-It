@@ -454,6 +454,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6310532415127207328, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6310532415127207330, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -501,6 +505,22 @@ PrefabInstance:
     - target: {fileID: 6310532415127207340, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_Name
       value: Brick (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
@@ -690,8 +710,8 @@ MonoBehaviour:
   maxScale: {x: 1.1, y: 0.28}
   scaleUpDuration: 0.175
   scaleDownDuration: 0.125
-  shakeDuration: 0.15
-  shakeMagnitude: 0.25
+  shakeDuration: 0.1
+  shakeMagnitude: 0.2
   wallLeft: {fileID: 14683309}
   wallRight: {fileID: 1773728762}
 --- !u!61 &454284424
@@ -979,6 +999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6310532415127207328, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: maxHits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6310532415127207330, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1026,6 +1050,22 @@ PrefabInstance:
     - target: {fileID: 6310532415127207340, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_Name
       value: Brick (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
@@ -1274,6 +1314,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6310532415127207328, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: maxHits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6310532415127207330, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1321,6 +1365,22 @@ PrefabInstance:
     - target: {fileID: 6310532415127207340, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
       propertyPath: m_Name
       value: Brick (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310532415127207341, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e6fe11d7bf138b43a86823746c9350f, type: 3}
@@ -2548,9 +2608,9 @@ GameObject:
   - component: {fileID: 1551516809}
   - component: {fileID: 1551516808}
   - component: {fileID: 1551516811}
-  - component: {fileID: 1551516813}
   - component: {fileID: 1551516810}
   - component: {fileID: 1551516814}
+  - component: {fileID: 1551516815}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -2599,7 +2659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 0.9215687, b: 0.023529414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2665,22 +2725,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &1551516813
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551516807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!96 &1551516814
 TrailRenderer:
   serializedVersion: 2
@@ -2789,6 +2833,22 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!58 &1551516815
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551516807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 14ba346f3c062e04cab4fbe8d69b9b1d, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1603623458
 GameObject:
   m_ObjectHideFlags: 0
