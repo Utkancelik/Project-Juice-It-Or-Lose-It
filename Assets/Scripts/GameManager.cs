@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     public int initialLives = 3;
     public int pointsPerBrick = 10;
+    public UIManager uiManager;
 
     public static GameManager Instance { get; private set; }
 
@@ -15,7 +16,8 @@ public class GameManager : MonoBehaviour
     private int lives;
     public bool isGameOver = false;
     public bool isGameWon = false;
-    public UIManager uiManager;
+
+    private Brick[] bricks;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
         LoadHighScore();
         UpdateScoreText();
         UpdateLivesText();
+        bricks = FindObjectsOfType<Brick>();
     }
 
     public void SaveHighScore()
@@ -95,15 +98,25 @@ public class GameManager : MonoBehaviour
 
     public void CheckGameWon()
     {
-        GameObject[] remainingBricks = GameObject.FindGameObjectsWithTag("Brick");
-        Debug.Log($"Check Game Won! Remaining Bricks: {remainingBricks.Length}");
-
-        if (remainingBricks.Length -1 == 0)
+        int remainingBricks = CountActiveBricks();
+        if (remainingBricks-1 == 0)
         {
-            Debug.Log("Game Won! 0 Bricks");
             isGameWon = true;
             ShowGameWonScreen();
         }
+    }
+
+    private int CountActiveBricks()
+    {
+        int count = 0;
+        foreach (var brick in bricks)
+        {
+            if (brick.gameObject.activeSelf)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 
     private void ShowGameWonScreen()
@@ -113,7 +126,6 @@ public class GameManager : MonoBehaviour
             uiManager.ShowGameWonScreen();
         }
     }
-
 
     public void RestartGame()
     {

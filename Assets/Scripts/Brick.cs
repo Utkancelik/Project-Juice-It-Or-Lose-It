@@ -1,91 +1,103 @@
 using UnityEngine;
-
+public enum BrickColor
+{
+    Green,
+    Yellow,
+    Red,
+    Blue,
+    // Add more colors here
+}
 public class Brick : MonoBehaviour
 {
-    public int maxHits = 2; // Set the maximum hits required
+    public int maxHits = 3;
     public int scoreValue = 10;
-    public GameObject destroyEffect;
+    public GameObject destroyEffectPrefab;
+    public BrickColor initialColor = BrickColor.Green; // Choose the initial color
+    private SpriteRenderer spriteRenderer;
+
     private int currentHits;
     private Collider2D brickCollider;
 
-    private ScreenShake screenShake;
-    private SpriteRenderer spriteRenderer;
+    private Color[] hitColors;
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         currentHits = 0;
         brickCollider = GetComponent<Collider2D>();
-        screenShake = FindObjectOfType<ScreenShake>();
-        spriteRenderer = GetComponent <SpriteRenderer>(); // Get the SpriteRenderer component
 
-        // Set the initial color based on the maxHits value
+        // Initialize hitColors array based on the initial color
+        InitializeHitColors();
+
         SetInitialColor();
     }
-    private void SetInitialColor()
-    {
-        Color[] initialColors = new Color[] { Color.green, Color.yellow, Color.red };
 
-        if (maxHits >= 1 && maxHits <= initialColors.Length)
+    private void InitializeHitColors()
+    {
+        // You can set hitColors based on the initialColor enum
+        switch (initialColor)
         {
-            spriteRenderer.color = initialColors[maxHits - 1];
+            case BrickColor.Green:
+                hitColors = new Color[] { Color.green, Color.yellow, Color.red, Color.blue };
+                break;
+            case BrickColor.Yellow:
+                hitColors = new Color[] { Color.yellow, Color.red, Color.blue, Color.green };
+                break;
+            // Add cases for other colors
+            default:
+                hitColors = new Color[] { Color.green, Color.yellow, Color.red, Color.blue };
+                break;
         }
     }
+
+    private void SetInitialColor()
+    {
+        if (maxHits >= 1 && maxHits <= hitColors.Length)
+        {
+            spriteRenderer.color = hitColors[currentHits];
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            screenShake.Shake(0.05f);
-
             currentHits++;
-
             if (currentHits >= maxHits)
             {
-                Debug.Log("Brick destroyed!");
                 DestroyBrick();
             }
             else
             {
-                // Play a hit effect or change the brick's appearance, for example.
-                // You can implement this as needed.
-                // Example: Change the brick's color based on hit count
                 ChangeColorOnHit();
             }
         }
     }
 
-    protected void DestroyBrick()
+    private void DestroyBrick()
     {
-        if (destroyEffect != null)
-        {
-            Instantiate(destroyEffect, transform.position, Quaternion.identity);
-        }
-
-        // Disable the collider to prevent further collisions
         brickCollider.enabled = false;
+        GameManager.Instance.AddScore(scoreValue);
 
-        // Check for remaining bricks before adding score
-        if (GameManager.Instance != null)
+        if (destroyEffectPrefab != null)
         {
-            GameManager.Instance.AddScore(scoreValue);
+            GameObject destroyEffect = Instantiate(destroyEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(destroyEffect, 0.35f);
         }
 
-        // Destroy the brick after checking for game won
-        Invoke("DestroyAfterDelay", 0f);
-    }
-
-    private void DestroyAfterDelay()
-    {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void ChangeColorOnHit()
     {
-        Color[] hitColors = new Color[] { Color.green, Color.yellow, Color.red };
-
-        if (maxHits >= 1 && currentHits <= maxHits && currentHits <= hitColors.Length)
+        if (currentHits < hitColors.Length)
         {
-            spriteRenderer.color = hitColors[currentHits - 1];
+            spriteRenderer.color = hitColors[currentHits];
+            Debug.Log("Changed color to " + hitColors[currentHits]);
+        }
+        else
+        {
+            Debug.LogWarning("No more colors defined for hits!");
         }
     }
-
 }

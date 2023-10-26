@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject gameCanvas;
     public GameObject gameOverCanvas;
-    public GameObject gameWonCanvas; // Add a reference to the GameWonCanvas.
+    public GameObject gameWonCanvas;
     public Text highScoreText;
     public Text roundText;
     public GameObject blackScreen;
@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     {
         gameCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
-        gameWonCanvas.SetActive(false); // Initially turn off the GameWonCanvas.
+        gameWonCanvas.SetActive(false);
     }
 
     public void ShowGameOverScreen(int highScore, int currentRound)
@@ -29,12 +29,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameWonScreen()
     {
-        // Display the GameWonCanvas and set the appropriate UI elements.
-        gameCanvas.SetActive(false); // Turn off the GameCanvas.
-        gameOverCanvas.SetActive(false); // Turn off the GameOverCanvas.
-        gameWonCanvas.SetActive(true); // Turn on the GameWonCanvas.
+        gameCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+        gameWonCanvas.SetActive(true);
     }
-
 
     public void RestartTheGame()
     {

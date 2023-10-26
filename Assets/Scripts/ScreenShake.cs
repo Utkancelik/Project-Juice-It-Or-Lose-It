@@ -5,11 +5,12 @@ public class ScreenShake : MonoBehaviour
 {
     public Transform cameraTransform;
     public float shakeDuration = 0.2f;
+    public float shakeMagnitude = 0.1f;
 
     private Vector3 originalCameraPosition;
     private bool isShaking = false;
 
-    void Start()
+    private void Start()
     {
         if (cameraTransform == null)
         {
@@ -33,12 +34,11 @@ public class ScreenShake : MonoBehaviour
 
         while (elapsedTime < shakeDuration)
         {
-            Vector3 randomPoint = originalCameraPosition + Random.insideUnitSphere * customShakeAmount;
+            Vector3 randomPoint = originalCameraPosition + (Random.insideUnitSphere * shakeMagnitude * customShakeAmount);
 
             cameraTransform.localPosition = randomPoint;
 
             elapsedTime += Time.deltaTime;
-
             yield return null;
         }
 
