@@ -20,6 +20,8 @@ public class Brick : MonoBehaviour
 
     private Color[] hitColors;
 
+    public GameObject[] powerUpPrefabs;
+    public float powerUpDropChance = 0.1f; // 10% chance
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -74,10 +76,11 @@ public class Brick : MonoBehaviour
         }
     }
 
-    private void DestroyBrick()
+    public void DestroyBrick()
     {
         brickCollider.enabled = false;
         GameManager.Instance.AddScore(scoreValue);
+        AudioManager.Instance.PlayBrickBreakSound(); // Play the brick break sound
 
         if (destroyEffectPrefab != null)
         {
@@ -85,8 +88,23 @@ public class Brick : MonoBehaviour
             Destroy(destroyEffect, 0.35f);
         }
 
+        if (Random.value <= powerUpDropChance)
+        {
+            SpawnRandomPowerUp();
+        }
+
         gameObject.SetActive(false);
     }
+
+    private void SpawnRandomPowerUp()
+    {
+        if (powerUpPrefabs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, powerUpPrefabs.Length);
+            Instantiate(powerUpPrefabs[randomIndex], transform.position, Quaternion.identity);
+        }
+    }
+
 
     private void ChangeColorOnHit()
     {

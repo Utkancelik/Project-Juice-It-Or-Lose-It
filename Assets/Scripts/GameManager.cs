@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isGameWon = false;
 
     private Brick[] bricks;
-
+    
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayBackgroundMusic(); // Play background music
         lives = initialLives;
         LoadHighScore();
         UpdateScoreText();

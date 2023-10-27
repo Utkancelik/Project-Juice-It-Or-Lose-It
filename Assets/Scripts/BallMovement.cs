@@ -25,6 +25,16 @@ public class BallMovement : MonoBehaviour
     private float timeMovingInSameDirection = 0f;
     private bool isMovingInSameDirection = false;
 
+    private bool isFireBall = false;
+    // Add a variable to BallMovement to indicate if it's an extra ball
+    private bool isExtraBall = false;
+
+    
+    private PowerUp powerUp;
+
+    // Add this variable to BallMovement
+    private bool shouldRecreate = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,22 +46,45 @@ public class BallMovement : MonoBehaviour
         originalStartColor = trailRenderer.startColor;
         originalEndColor = trailRenderer.endColor;
         originalScale = transform.localScale;
+
+        // Find and store the PowerUp script
+        powerUp = FindObjectOfType<PowerUp>();
     }
 
+    public void SetAsExtraBall()
+    {
+        isExtraBall = true;
+    }
+
+    public void ActivateFireBall()
+    {
+        isFireBall = true;
+        SetTrailColor(Color.red, Color.red); // Change trail color for FireBall
+    }
+
+  
+    // Modify the Update method
     private void Update()
     {
         if (transform.position.y < someYThreshold)
         {
             if (!gameManager.isGameOver)
             {
-                gameManager.RemoveLife();
-                if (gameManager.isGameOver)
+                if (!isExtraBall)
                 {
-                    // Game over logic here
+                    gameManager.RemoveLife();
+                    shouldRecreate = true;
+                    ResetBallPosition();
                 }
                 else
                 {
-                    ResetBallPosition();
+                    shouldRecreate = false;
+                    
+                }
+
+                if (gameManager.isGameOver)
+                {
+                    // Game over logic here
                 }
             }
         }
@@ -61,8 +94,19 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    // Add this method to set the recreate flag
+    public void SetRecreateFlag(bool recreate)
+    {
+        shouldRecreate = recreate;
+    }
+
+
+
+
     private void ResetBallPosition()
     {
+        AudioManager.Instance.PlayBallCreationSound(); // Play ball creation sound
+
         transform.position = startPosition;
         rb.velocity = initialDirection.normalized * initialSpeed;
         rb.freezeRotation = true;
@@ -99,18 +143,27 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        trailRenderer.startColor = Color.white;
-        trailRenderer.endColor = Color.white;
-        StartCoroutine(ScaleBallOnHit());
+        AudioManager audioManager = AudioManager.Instance; // Get the AudioManager instance
+
+        StartCoroutine(ResetTrailColorAndShape());
+
         if (collision.gameObject.CompareTag("Brick"))
         {
-            screenShake.Shake(0.1f);
-            rb.freezeRotation = true;
-            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            audioManager.PlayBrickBreakSound(); // Play brick break sound
+
+            if (!isFireBall)
+            {
+                // Normal behavior for the main ball - bounce off bricks
+                screenShake.Shake(0.1f);
+                rb.freezeRotation = true;
+                float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
         }
         else if (collision.gameObject.CompareTag("Paddle"))
         {
+            audioManager.PlayPaddleHitSound(); // Play paddle hit sound
+
             GameObject fallDownEffect = Instantiate(FallDownEffect, transform.position, Quaternion.identity);
             Destroy(fallDownEffect, .35f);
             PaddleMovement paddleMovement = collision.gameObject.GetComponent<PaddleMovement>();
@@ -125,24 +178,42 @@ public class BallMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {
+            audioManager.PlayWallHitSound(); // Play wall hit sound
+
             screenShake.Shake(0.2f);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
             float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
+
+        if (collision.gameObject.CompareTag("Brick") && isFireBall)
+        {
+            // Destroy the brick without bouncing if it's a FireBall
+            Brick brick = collision.gameObject.GetComponent<Brick>();
+            brick.DestroyBrick();
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+
+    // Function to revert the FireBall effect
+    public void RevertFireBall()
     {
-        StartCoroutine(ResetTrailColorAndShape());
+        isFireBall = false;
+        SetTrailColor(originalStartColor, originalEndColor);
     }
-
     private IEnumerator ResetTrailColorAndShape()
     {
         float resetDuration = .25f;
         yield return new WaitForSeconds(resetDuration);
-        trailRenderer.startColor = originalStartColor;
-        trailRenderer.endColor = originalEndColor;
+        trailRenderer.startColor = isFireBall ? Color.red : originalStartColor;
+        trailRenderer.endColor = isFireBall ? Color.red : originalEndColor;
         rb.freezeRotation = true;
     }
+
+    public void SetTrailColor(Color startColor, Color endColor)
+    {
+        trailRenderer.startColor = startColor;
+        trailRenderer.endColor = endColor;
+    }
+
 }
